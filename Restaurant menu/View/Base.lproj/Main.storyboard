@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--🥙 Food Time 👩‍🍳-->
+        <!--🥙 Food Time 😋-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Restaurant_menu" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <constraint firstItem="6Ni-b8-gaQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="4" id="rOJ-1S-KDH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="🥙 Food Time 👩‍🍳" id="Jiw-im-WYT">
+                    <navigationItem key="navigationItem" title="🥙 Food Time 😋" id="Jiw-im-WYT">
                         <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="tTQ-vD-OzS"/>
                     </navigationItem>
                     <connections>

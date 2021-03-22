@@ -11,27 +11,27 @@ class DummyData{
     private init(){}
     static let shared = DummyData()
     let food:Array = [[
-        "Name": " North Indian ",
+        "Name": " North Indian  ",
         "image": "north-indian",
         "Top3": ["a","b","c"],
     ],[
-        "Name": " South Indian ",
+        "Name": " South Indian  ",
         "image": "south-indian",
         "Top3": ["a","b","c"],
     ],[
-        "Name": " Italian ",
+        "Name": " Italian  ",
         "image": "italian",
         "Top3": ["a","b","c"],
     ],[
-        "Name": " Mexican ",
+        "Name": " Mexican  ",
         "image": "mexican",
         "Top3": ["a","b","c"],
     ],[
-        "Name": " Thai ",
+        "Name": " Thai  ",
         "image": "thai",
         "Top3": ["a","b","c"],
     ],[
-        "Name": " Chinise ",
+        "Name": " Chinise  ",
         "image": "chinise",
         "Top3": ["a","b","c"],
     ]]
