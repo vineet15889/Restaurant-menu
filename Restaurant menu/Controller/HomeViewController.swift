@@ -8,7 +8,6 @@
 import UIKit
 
 class HomeViewController: UIViewController{
-    fileprivate let cellItems = ["South Indian", "North Indian", "Italian", "Mexican", "Thai", "Chinise"]
     @IBOutlet weak var infiniteCollectionView: InfiniteCollectionView!
     {
         didSet
@@ -36,13 +35,14 @@ extension HomeViewController: InfiniteCollectionViewDataSource
 {
     func numberOfItems(_ collectionView: UICollectionView) -> Int
     {
-        return cellItems.count
+        return DummyData.shared.food.count
     }
     
     func cellForItemAtIndexPath(_ collectionView: UICollectionView, dequeueIndexPath: IndexPath, usableIndexPath: IndexPath)  -> UICollectionViewCell
     {
         let cell = infiniteCollectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: dequeueIndexPath) as! ExampleCollectionViewCell
-        cell.lbTitle.text = cellItems[usableIndexPath.row]
+        cell.lbTitle.text =  DummyData.shared.food[usableIndexPath.row]["Name"] as? String
+        cell.background.image = UIImage(named:DummyData.shared.food[usableIndexPath.row]["image"] as? String ?? "north-indian")
         return cell
     }
 }
@@ -51,6 +51,6 @@ extension HomeViewController: InfiniteCollectionViewDelegate
 {
     func didSelectCellAtIndexPath(_ collectionView: UICollectionView, usableIndexPath: IndexPath)
     {
-        print("Selected cell with name \(cellItems[usableIndexPath.row])")
+       // print("Selected cell with name \(cellItems[usableIndexPath.row])")
     }
 }
