@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController{
-    fileprivate let cellItems = ["One", "Two", "Three", "Four", "Five", "Six"]
+    fileprivate let cellItems = ["South Indian", "North Indian", "Italian", "Mexican", "Thai", "Chinise"]
     @IBOutlet weak var infiniteCollectionView: InfiniteCollectionView!
     {
         didSet
