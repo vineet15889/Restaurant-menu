@@ -31,15 +31,12 @@ class HomeViewController: UIViewController{
     }
 }
 
-extension HomeViewController: InfiniteCollectionViewDataSource
-{
-    func numberOfItems(_ collectionView: UICollectionView) -> Int
-    {
+extension HomeViewController: InfiniteCollectionViewDataSource{
+    func numberOfItems(_ collectionView: UICollectionView) -> Int{
         return DummyData.shared.food.count
     }
     
-    func cellForItemAtIndexPath(_ collectionView: UICollectionView, dequeueIndexPath: IndexPath, usableIndexPath: IndexPath)  -> UICollectionViewCell
-    {
+    func cellForItemAtIndexPath(_ collectionView: UICollectionView, dequeueIndexPath: IndexPath, usableIndexPath: IndexPath)  -> UICollectionViewCell{
         let cell = infiniteCollectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: dequeueIndexPath) as! ExampleCollectionViewCell
         cell.lbTitle.text =  DummyData.shared.food[usableIndexPath.row]["Name"] as? String
         cell.background.image = UIImage(named:DummyData.shared.food[usableIndexPath.row]["image"] as? String ?? "north-indian")
@@ -47,10 +44,11 @@ extension HomeViewController: InfiniteCollectionViewDataSource
     }
 }
 
-extension HomeViewController: InfiniteCollectionViewDelegate
-{
-    func didSelectCellAtIndexPath(_ collectionView: UICollectionView, usableIndexPath: IndexPath)
-    {
-       // print("Selected cell with name \(cellItems[usableIndexPath.row])")
+extension HomeViewController: InfiniteCollectionViewDelegate{
+    func didSelectCellAtIndexPath(_ collectionView: UICollectionView, usableIndexPath: IndexPath){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:DetailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        vc.title  = DummyData.shared.food[usableIndexPath.row]["Name"] as? String
+        self.navigationController?.pushViewController (vc, animated: true)
     }
 }

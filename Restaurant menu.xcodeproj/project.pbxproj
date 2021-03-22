@@ -19,6 +19,7 @@
 		0832B87C26089A0600FEC96E /* ExampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832B87A26089A0600FEC96E /* ExampleCollectionViewCell.swift */; };
 		0832B87D26089A0600FEC96E /* ExampleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0832B87B26089A0600FEC96E /* ExampleCollectionViewCell.xib */; };
 		0832B88B2608A5DD00FEC96E /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832B88A2608A5DD00FEC96E /* DummyData.swift */; };
+		0832B89D2608AF1500FEC96E /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832B89C2608AF1500FEC96E /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		0832B87A26089A0600FEC96E /* ExampleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0832B87B26089A0600FEC96E /* ExampleCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleCollectionViewCell.xib; sourceTree = "<group>"; };
 		0832B88A2608A5DD00FEC96E /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		0832B89C2608AF1500FEC96E /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				0832B8752608994800FEC96E /* HomeViewController.swift */,
+				0832B89C2608AF1500FEC96E /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				0832B8762608994800FEC96E /* HomeViewController.swift in Sources */,
 				0832B871260898E100FEC96E /* InfiniteCollectionView.swift in Sources */,
 				0832B87C26089A0600FEC96E /* ExampleCollectionViewCell.swift in Sources */,
+				0832B89D2608AF1500FEC96E /* DetailsViewController.swift in Sources */,
 				0832B83E2608978E00FEC96E /* AppDelegate.swift in Sources */,
 				0832B8402608978E00FEC96E /* SceneDelegate.swift in Sources */,
 			);
