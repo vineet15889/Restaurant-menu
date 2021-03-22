@@ -52,7 +52,7 @@
                 <outlet property="background" destination="C3x-bn-TWw" id="tAL-xE-avO"/>
                 <outlet property="lbTitle" destination="Lba-4A-prR" id="SXK-vk-CQd"/>
             </connections>
-            <point key="canvasLocation" x="371.01449275362324" y="300.33482142857139"/>
+            <point key="canvasLocation" x="371.01449275362324" y="299.66517857142856"/>
         </collectionViewCell>
     </objects>
     <resources>

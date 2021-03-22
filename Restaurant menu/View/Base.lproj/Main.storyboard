@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-b8-gaQ" customClass="InfiniteCollectionView" customModule="menu" customModuleProvider="target">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Ni-b8-gaQ" customClass="InfiniteCollectionView" customModule="Restaurant_menu" customModuleProvider="target">
                                 <rect key="frame" x="4" y="92" width="406" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sRd-OQ-1h0">
@@ -55,6 +55,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="🥙 Food Time 😋" id="Jiw-im-WYT">
+                        <leftBarButtonItems>
+                            <barButtonItem title="En" id="onQ-kc-rTv"/>
+                            <barButtonItem title="हि" id="VQC-Ov-DWW"/>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="tTQ-vD-OzS"/>
                     </navigationItem>
                     <connections>

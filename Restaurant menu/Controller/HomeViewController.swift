@@ -40,6 +40,7 @@ extension HomeViewController: InfiniteCollectionViewDataSource{
         let cell = infiniteCollectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: dequeueIndexPath) as! ExampleCollectionViewCell
         cell.lbTitle.text =  DummyData.shared.food[usableIndexPath.row]["Name"] as? String
         cell.background.image = UIImage(named:DummyData.shared.food[usableIndexPath.row]["image"] as? String ?? "north-indian")
+        cell.reloadTop3()
         return cell
     }
 }

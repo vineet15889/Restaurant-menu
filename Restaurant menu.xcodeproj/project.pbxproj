@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08087EAF26091C2C001DA2B9 /* TopDishesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08087EAD26091C2C001DA2B9 /* TopDishesTableViewCell.swift */; };
+		08087EB026091C2C001DA2B9 /* TopDishesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08087EAE26091C2C001DA2B9 /* TopDishesTableViewCell.xib */; };
 		0832B83E2608978E00FEC96E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832B83D2608978E00FEC96E /* AppDelegate.swift */; };
 		0832B8402608978E00FEC96E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0832B83F2608978E00FEC96E /* SceneDelegate.swift */; };
 		0832B8452608978E00FEC96E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0832B8432608978E00FEC96E /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08087EAD26091C2C001DA2B9 /* TopDishesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopDishesTableViewCell.swift; sourceTree = "<group>"; };
+		08087EAE26091C2C001DA2B9 /* TopDishesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopDishesTableViewCell.xib; sourceTree = "<group>"; };
 		0832B83A2608978E00FEC96E /* Restaurant menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Restaurant menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0832B83D2608978E00FEC96E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0832B83F2608978E00FEC96E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,6 +145,8 @@
 			children = (
 				0832B870260898E100FEC96E /* InfiniteCollectionView.swift */,
 				0832B87A26089A0600FEC96E /* ExampleCollectionViewCell.swift */,
+				08087EAD26091C2C001DA2B9 /* TopDishesTableViewCell.swift */,
+				08087EAE26091C2C001DA2B9 /* TopDishesTableViewCell.xib */,
 				0832B87B26089A0600FEC96E /* ExampleCollectionViewCell.xib */,
 				0832B8432608978E00FEC96E /* Main.storyboard */,
 				0832B8482608979000FEC96E /* LaunchScreen.storyboard */,
@@ -279,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0832B84A2608979000FEC96E /* LaunchScreen.storyboard in Resources */,
+				08087EB026091C2C001DA2B9 /* TopDishesTableViewCell.xib in Resources */,
 				0832B87D26089A0600FEC96E /* ExampleCollectionViewCell.xib in Resources */,
 				0832B8472608979000FEC96E /* Assets.xcassets in Resources */,
 				0832B8452608978E00FEC96E /* Main.storyboard in Resources */,
@@ -311,6 +318,7 @@
 				0832B871260898E100FEC96E /* InfiniteCollectionView.swift in Sources */,
 				0832B87C26089A0600FEC96E /* ExampleCollectionViewCell.swift in Sources */,
 				0832B89D2608AF1500FEC96E /* DetailsViewController.swift in Sources */,
+				08087EAF26091C2C001DA2B9 /* TopDishesTableViewCell.swift in Sources */,
 				0832B83E2608978E00FEC96E /* AppDelegate.swift in Sources */,
 				0832B8402608978E00FEC96E /* SceneDelegate.swift in Sources */,
 			);
