@@ -9,6 +9,9 @@ import UIKit
 
 class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
     var tableview:UITableView!
+    var index:Int = 0
+    var top3Array:[[String:Any]] = [[ : ]]
+    
     @IBOutlet weak var background: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
     override func awakeFromNib() {
@@ -26,18 +29,78 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
         tableview.dataSource = self
     }
     
-    
-    
     func reloadTop3(){
+        top3Array = DummyData.shared.food[index]["Top3"] as! [[String:Any]]
         tableview.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3;
+        return top3Array.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TopDishesTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TopDishesTableViewCell", for: indexPath) as! TopDishesTableViewCell
+        cell.name.text =  NSLocalizedString((top3Array[indexPath.row]["Name"] as! String?)!, comment: "")
+        cell.photo.image = UIImage(named:(top3Array[indexPath.row]["image"] as! String))
+        cell.price.text = "₹\(String(describing: top3Array[indexPath.row]["Price"]!))"
+        cell.rating.text = "\(String(describing: top3Array[indexPath.row]["rating"]!))/5"
+        cell.reduce.mk_addTapHandler { (btn) in
+             self.reduceTapped(btn: btn, indexPath: indexPath)
+        }
+        cell.add.mk_addTapHandler { (btn) in
+             self.addTapped(btn: btn, indexPath: indexPath)
+        }
         return cell;
+    }
+    
+
+    func reduceTapped(btn:UIButton, indexPath:IndexPath) {
+        var count:Int = Int(top3Array[indexPath.row]["quantity"] as! String)!
+        if  count > 0 {
+            if let cell = tableview.cellForRow(at: indexPath) as? TopDishesTableViewCell{
+                count = count - 1
+                cell.quantity.text = String(describing:count)
+                top3Array[indexPath.row]["quantity"] = String(describing:count)
+            }
+        }
+    }
+    func addTapped(btn:UIButton, indexPath:IndexPath) {
+        var count:Int = Int(top3Array[indexPath.row]["quantity"] as! String)!
+        if let cell = tableview.cellForRow(at: indexPath) as? TopDishesTableViewCell{
+            count = count + 1
+            cell.quantity.text = String(describing:count)
+            top3Array[indexPath.row]["quantity"] = String(describing:count)
+        }
+    }
+}
+
+extension UIButton {
+    private class Action {
+        var action: (UIButton) -> Void
+
+        init(action: @escaping (UIButton) -> Void) {
+            self.action = action
+        }
+    }
+
+    private struct AssociatedKeys {
+        static var ActionTapped = "actionTapped"
+    }
+
+    private var tapAction: Action? {
+        set { objc_setAssociatedObject(self, &AssociatedKeys.ActionTapped, newValue, .OBJC_ASSOCIATION_RETAIN) }
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.ActionTapped) as? Action }
+    }
+
+
+    @objc dynamic private func handleAction(_ recognizer: UIButton) {
+        tapAction?.action(recognizer)
+    }
+
+
+    func mk_addTapHandler(action: @escaping (UIButton) -> Void) {
+        self.addTarget(self, action: #selector(handleAction(_:)), for: .touchUpInside)
+        tapAction = Action(action: action)
+
     }
 }

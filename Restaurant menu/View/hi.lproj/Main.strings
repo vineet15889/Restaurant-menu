@@ -1,0 +1,12 @@
+
+/* Class = "UINavigationItem"; title = "🥙 Food Time 😋"; ObjectID = "Jiw-im-WYT"; */
+"Jiw-im-WYT.title" = "🥙 भोजन समय 😋";
+
+/* Class = "UIButton"; normalTitle = "Checkout"; ObjectID = "KFx-tP-Yea"; */
+"KFx-tP-Yea.normalTitle" = "चेक आउट";
+
+/* Class = "UIBarButtonItem"; title = "हि"; ObjectID = "VQC-Ov-DWW"; */
+"VQC-Ov-DWW.title" = "हि";
+
+/* Class = "UIBarButtonItem"; title = "En"; ObjectID = "onQ-kc-rTv"; */
+"onQ-kc-rTv.title" = "En";

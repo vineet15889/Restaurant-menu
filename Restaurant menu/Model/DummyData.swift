@@ -8,31 +8,13 @@
 import Foundation
 
 class DummyData{
-    private init(){}
+    var food:[[String:Any]]  = [[:]]
+    private init(){
+        guard let path = Bundle.main.path(forResource: "DummyList", ofType: "plist") else {return}
+        let url = URL(fileURLWithPath: path)
+        let data = try! Data(contentsOf: url)
+        guard let plist = try! PropertyListSerialization.propertyList(from: data, options: .mutableContainers, format: nil) as? [[String:Any]] else {return}
+        food = plist
+    }
     static let shared = DummyData()
-    let food:Array = [[
-        "Name": " North Indian  ",
-        "image": "north-indian",
-        "Top3": ["a","b","c"],
-    ],[
-        "Name": " South Indian  ",
-        "image": "south-indian",
-        "Top3": ["a","b","c"],
-    ],[
-        "Name": " Italian  ",
-        "image": "italian",
-        "Top3": ["a","b","c"],
-    ],[
-        "Name": " Mexican  ",
-        "image": "mexican",
-        "Top3": ["a","b","c"],
-    ],[
-        "Name": " Thai  ",
-        "image": "thai",
-        "Top3": ["a","b","c"],
-    ],[
-        "Name": " Chinise  ",
-        "image": "chinise",
-        "Top3": ["a","b","c"],
-    ]]
 }

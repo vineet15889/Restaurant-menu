@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  Restaurant menu
+
+  Created by Vineet Rai on 23/03/21.
+  
+*/
+" North Indian  " = " उत्तर भारतीय  ";
+" South Indian  " = " दक्षिण भारतीय  ";
+" Italian  " = " इतालवी  ";
+" Mexican  " = " मैक्सिकन  ";
+" Thai  " = " थाई  ";
+" Chinise  " = " चीनी  ";
+"Shahi Paneer" = "शाही पनीर";
+"Butter Chiche" = "बटर चिकन";
+"Palak Paneer" = "पालक पनीर";
+"Dosa" = "डोसा";
+"idli" = "इडली";
+"Uttapam" = "उत्तपम";
+"Pizza" = "पिज़्ज़ा";
+"Mushroom Risotto" = "इतालवी पुलाव";
+"Bruschetta" = "ब्रुस्केटा";
+"Chicken Taquitos" = "चिकन टकीटोस";
+"Taco Lettuce" = "टैको लेटूस";
+"Crunchwrap" = "कुरकुरे";
+"Thai Chicken Satay" = "चिकन सेटे";
+"Lettuce Wraps" = "लेट्रस व्रैप्स";
+"Tom Khaa" = "टॉम खा";
+"Dumplings" = "मोमो";
+"Chow Mein" = "चाऊ मीन";
+"Vermicelli Rolls" = "सिंदूर रोल";

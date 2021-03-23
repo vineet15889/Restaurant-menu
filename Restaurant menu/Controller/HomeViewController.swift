@@ -29,7 +29,40 @@ class HomeViewController: UIViewController{
          flowlayout.scrollDirection = .horizontal
         infiniteCollectionView.collectionViewLayout = flowlayout
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.infiniteCollectionView?.scrollToItem(at:IndexPath(item: 4, section: 0), at: .right, animated: false)
+    }
+
+    
+    @IBAction func gotoPayment(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc:PaymentViewController = storyboard.instantiateViewController(withIdentifier: "PaymentViewController") as! PaymentViewController
+        vc.title  = "Cart 🛒"
+//        vc.top3Array = DummyData.shared.food[usableIndexPath.row]["Top3"] as! [[String:Any]]
+        self.navigationController?.pushViewController (vc, animated: true)
+        
+    }
+    
+    @IBAction func english(_ sender: Any) {
+        self.languageButtonAction(language: "en")
+        
+    }
+    
+    @IBAction func hindi(_ sender: Any) {
+        self.languageButtonAction(language:"hi")
+    }
+    func languageButtonAction(language:String) {
+        UserDefaults.standard.set([language], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
+        Bundle.setLanguage(language)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        UIApplication.shared.keyWindow?.rootViewController = storyboard.instantiateInitialViewController()
+    }
 }
+
+
 
 extension HomeViewController: InfiniteCollectionViewDataSource{
     func numberOfItems(_ collectionView: UICollectionView) -> Int{
@@ -38,8 +71,9 @@ extension HomeViewController: InfiniteCollectionViewDataSource{
     
     func cellForItemAtIndexPath(_ collectionView: UICollectionView, dequeueIndexPath: IndexPath, usableIndexPath: IndexPath)  -> UICollectionViewCell{
         let cell = infiniteCollectionView.dequeueReusableCell(withReuseIdentifier: "cellCollectionView", for: dequeueIndexPath) as! ExampleCollectionViewCell
-        cell.lbTitle.text =  DummyData.shared.food[usableIndexPath.row]["Name"] as? String
+        cell.lbTitle.text = NSLocalizedString((DummyData.shared.food[usableIndexPath.row]["Name"] as? String)!, comment: "") 
         cell.background.image = UIImage(named:DummyData.shared.food[usableIndexPath.row]["image"] as? String ?? "north-indian")
+        cell.index = usableIndexPath.row
         cell.reloadTop3()
         return cell
     }
@@ -49,7 +83,8 @@ extension HomeViewController: InfiniteCollectionViewDelegate{
     func didSelectCellAtIndexPath(_ collectionView: UICollectionView, usableIndexPath: IndexPath){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc:DetailsViewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-        vc.title  = DummyData.shared.food[usableIndexPath.row]["Name"] as? String
+        vc.title  = NSLocalizedString((DummyData.shared.food[usableIndexPath.row]["Name"] as? String)!, comment: "")
+        vc.top3Array = DummyData.shared.food[usableIndexPath.row]["Top3"] as! [[String:Any]]
         self.navigationController?.pushViewController (vc, animated: true)
     }
 }

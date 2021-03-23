@@ -56,10 +56,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="🥙 Food Time 😋" id="Jiw-im-WYT">
                         <leftBarButtonItems>
-                            <barButtonItem title="En" id="onQ-kc-rTv"/>
-                            <barButtonItem title="हि" id="VQC-Ov-DWW"/>
+                            <barButtonItem title="हि" id="VQC-Ov-DWW">
+                                <connections>
+                                    <action selector="hindi:" destination="BYZ-38-t0r" id="Jx2-Wi-DCa"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="En" id="onQ-kc-rTv">
+                                <connections>
+                                    <action selector="english:" destination="BYZ-38-t0r" id="5yW-UB-Hwg"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
-                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="tTQ-vD-OzS"/>
+                        <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="tTQ-vD-OzS">
+                            <connections>
+                                <action selector="gotoPayment:" destination="BYZ-38-t0r" id="mD3-ia-vHB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="infiniteCollectionView" destination="6Ni-b8-gaQ" id="750-JA-6PU"/>
@@ -67,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="944.92753623188412" y="93.75"/>
+            <point key="canvasLocation" x="943" y="86"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="7En-hc-C7f">
@@ -76,13 +88,60 @@
                     <view key="view" contentMode="scaleToFill" id="w3P-6b-74e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="M2Z-aJ-hRS">
+                                <rect key="frame" x="4" y="48" width="406" height="764"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="16"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ZJu-yN-vE3" id="MZh-G0-Ko9"/>
+                                    <outlet property="delegate" destination="ZJu-yN-vE3" id="GEI-M6-Wfl"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFx-tP-Yea">
+                                <rect key="frame" x="107" y="823" width="200" height="53"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="As5-90-Fur"/>
+                                    <constraint firstAttribute="height" constant="53" id="pH5-Zd-MCV"/>
+                                </constraints>
+                                <state key="normal" title="Checkout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="payment:" destination="ZJu-yN-vE3" eventType="touchUpInside" id="dzM-hg-W3b"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ffX-fa-DRX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.89329780690000005" green="1" blue="0.86490949049999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M2Z-aJ-hRS" firstAttribute="top" secondItem="ffX-fa-DRX" secondAttribute="top" constant="4" id="7CO-BI-cf6"/>
+                            <constraint firstAttribute="bottom" secondItem="KFx-tP-Yea" secondAttribute="bottom" constant="20" id="A4t-WF-ZIl"/>
+                            <constraint firstItem="ffX-fa-DRX" firstAttribute="bottom" secondItem="M2Z-aJ-hRS" secondAttribute="bottom" constant="50" id="PIE-H1-nzY"/>
+                            <constraint firstItem="M2Z-aJ-hRS" firstAttribute="leading" secondItem="ffX-fa-DRX" secondAttribute="leading" constant="4" id="SeU-VD-MtJ"/>
+                            <constraint firstItem="KFx-tP-Yea" firstAttribute="centerX" secondItem="w3P-6b-74e" secondAttribute="centerX" id="VUU-m2-zzh"/>
+                            <constraint firstItem="ffX-fa-DRX" firstAttribute="trailing" secondItem="M2Z-aJ-hRS" secondAttribute="trailing" constant="4" id="lMU-O9-fZy"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableview" destination="M2Z-aJ-hRS" id="gNg-Qk-8Ut"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QxC-SV-i1Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1777" y="87"/>
+            <point key="canvasLocation" x="1818.840579710145" y="85.714285714285708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IOW-qI-X6x">
@@ -100,7 +159,22 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uwm-Rc-bx8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.782608695652179" y="93.75"/>
+            <point key="canvasLocation" x="22" y="86"/>
+        </scene>
+        <!--Payment View Controller-->
+        <scene sceneID="55D-ke-p1Y">
+            <objects>
+                <viewController storyboardIdentifier="PaymentViewController" id="tWy-Iv-eM2" customClass="PaymentViewController" customModule="Restaurant_menu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vcr-Kc-xYo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Edq-Sh-vkT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wy4-2V-00i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2774" y="86"/>
         </scene>
     </scenes>
     <resources>
