@@ -57,17 +57,20 @@
                     <navigationItem key="navigationItem" title="🥙 Food Time 😋" id="Jiw-im-WYT">
                         <leftBarButtonItems>
                             <barButtonItem title="हि" id="VQC-Ov-DWW">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="hindi:" destination="BYZ-38-t0r" id="Jx2-Wi-DCa"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="En" id="onQ-kc-rTv">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="english:" destination="BYZ-38-t0r" id="5yW-UB-Hwg"/>
                                 </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" image="cart.fill" catalog="system" id="tTQ-vD-OzS">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="gotoPayment:" destination="BYZ-38-t0r" id="mD3-ia-vHB"/>
                             </connections>
@@ -151,6 +154,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="icH-2o-EaV">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

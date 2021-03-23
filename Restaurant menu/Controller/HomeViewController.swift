@@ -29,12 +29,6 @@ class HomeViewController: UIViewController{
          flowlayout.scrollDirection = .horizontal
         infiniteCollectionView.collectionViewLayout = flowlayout
     }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        self.infiniteCollectionView?.scrollToItem(at:IndexPath(item: 4, section: 0), at: .right, animated: false)
-    }
-
     
     @IBAction func gotoPayment(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)

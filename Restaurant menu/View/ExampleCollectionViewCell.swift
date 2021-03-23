@@ -31,6 +31,7 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
     
     func reloadTop3(){
         top3Array = DummyData.shared.food[index]["Top3"] as! [[String:Any]]
+        print(top3Array)
         tableview.reloadData()
     }
     
@@ -44,6 +45,8 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
         cell.photo.image = UIImage(named:(top3Array[indexPath.row]["image"] as! String))
         cell.price.text = "₹\(String(describing: top3Array[indexPath.row]["Price"]!))"
         cell.rating.text = "\(String(describing: top3Array[indexPath.row]["rating"]!))/5"
+        cell.quantity.text = "0"
+        cell.quantity.text = String(describing: top3Array[indexPath.row]["quantity"]!)
         cell.reduce.mk_addTapHandler { (btn) in
              self.reduceTapped(btn: btn, indexPath: indexPath)
         }
@@ -60,7 +63,8 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
             if let cell = tableview.cellForRow(at: indexPath) as? TopDishesTableViewCell{
                 count = count - 1
                 cell.quantity.text = String(describing:count)
-                top3Array[indexPath.row]["quantity"] = String(describing:count)
+                DummyData.shared.updateData(cusineIndex: index, foodIndex: indexPath.row, quantity: count)
+                self.reloadTop3()
             }
         }
     }
@@ -69,7 +73,8 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
         if let cell = tableview.cellForRow(at: indexPath) as? TopDishesTableViewCell{
             count = count + 1
             cell.quantity.text = String(describing:count)
-            top3Array[indexPath.row]["quantity"] = String(describing:count)
+            DummyData.shared.updateData(cusineIndex: index, foodIndex: indexPath.row, quantity: count)
+            self.reloadTop3()
         }
     }
 }

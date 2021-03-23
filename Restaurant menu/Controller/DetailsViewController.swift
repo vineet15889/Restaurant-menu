@@ -28,6 +28,8 @@ class DetailsViewController: UIViewController,UITableViewDelegate,UITableViewDat
         cell.photo.image = UIImage(named:(top3Array[indexPath.row]["image"] as! String))
         cell.price.text = "₹\(String(describing: top3Array[indexPath.row]["Price"]!))"
         cell.rating.text = "\(String(describing: top3Array[indexPath.row]["rating"]!))/5"
+        cell.quantity.text = "0"
+        cell.quantity.text = String(describing: top3Array[indexPath.row]["quantity"]!)
         cell.reduce.mk_addTapHandler { (btn) in
              self.reduceTapped(btn: btn, indexPath: indexPath)
         }

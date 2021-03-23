@@ -180,6 +180,7 @@
 			children = (
 				0832B83D2608978E00FEC96E /* AppDelegate.swift */,
 				0832B83F2608978E00FEC96E /* SceneDelegate.swift */,
+				08087ED22609871D001DA2B9 /* Localizable.strings */,
 				0832B8462608979000FEC96E /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -190,7 +191,6 @@
 			children = (
 				0832B88A2608A5DD00FEC96E /* DummyData.swift */,
 				08087EBE26098543001DA2B9 /* Language.swift */,
-				08087ED22609871D001DA2B9 /* Localizable.strings */,
 				08087EB426094243001DA2B9 /* DummyList.plist */,
 			);
 			path = Model;
