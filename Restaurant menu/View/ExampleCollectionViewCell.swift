@@ -31,7 +31,6 @@ class ExampleCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITabl
     
     func reloadTop3(){
         top3Array = DummyData.shared.food[index]["Top3"] as! [[String:Any]]
-        print(top3Array)
         tableview.reloadData()
     }
     

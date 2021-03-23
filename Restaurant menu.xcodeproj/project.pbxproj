@@ -126,8 +126,8 @@
 			children = (
 				0832B8892608A57700FEC96E /* Supporting Files */,
 				0832B8882608A56200FEC96E /* Controller */,
-				0832B8872608A54900FEC96E /* View */,
 				0832B88F2608A5E000FEC96E /* Model */,
+				0832B8872608A54900FEC96E /* View */,
 				0832B84B2608979000FEC96E /* Info.plist */,
 			);
 			path = "Restaurant menu";

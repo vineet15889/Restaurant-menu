@@ -164,7 +164,6 @@ extension InfiniteCollectionView
         {
             if (!self.dataSource!.isEqual(self))
             {
-                print("WARNING: UICollectionView DataSource must not be modified.  Set infiniteDataSource instead.")
                 self.dataSource = self
             }
         }
@@ -176,7 +175,6 @@ extension InfiniteCollectionView
         {
             if (!self.delegate!.isEqual(self))
             {
-                print("WARNING: UICollectionView delegate must not be modified.  Set infiniteDelegate instead.")
                 self.delegate = self
             }
         }
